@@ -857,24 +857,27 @@ p:last-child { margin-bottom: 0; }
 }
 
 .lang-link {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--muted);
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  padding: 3px 7px;
+  padding: 3px 5px;
   border-radius: 4px;
-  transition: color 0.15s, background 0.15s;
-  white-space: nowrap;
+  font-size: 1.4rem;
+  opacity: 0.4;
+  transform: scale(0.78);
+  transform-origin: center;
+  transition: opacity 0.15s, background 0.15s, transform 0.15s;
 }
 
 .lang-link.active {
-  color: var(--blue);
+  opacity: 1;
+  transform: scale(1);
   background: var(--blue-light);
 }
 
 .lang-link:hover:not(.active) {
-  color: var(--dark);
-  background: #f0f0f0;
+  opacity: 0.72;
+  transform: scale(0.84);
 }
 
 @media (max-width: 768px) {
