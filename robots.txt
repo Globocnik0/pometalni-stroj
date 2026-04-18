@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pometalni-stroj.si/sitemap.xml
