@@ -62,7 +62,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .section {
-  padding: 72px 0;
+  padding: 52px 0;
 }
 
 .section--alt {
@@ -81,7 +81,7 @@ p:last-child { margin-bottom: 0; }
 
 .section-title {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .section-title h2 {
@@ -504,7 +504,7 @@ p:last-child { margin-bottom: 0; }
 
 .cta-strip {
   text-align: center;
-  padding: 64px 24px;
+  padding: 44px 24px;
 }
 
 .cta-strip h2 {
@@ -964,6 +964,17 @@ p:last-child { margin-bottom: 0; }
 /* =========================================================
    RESPONSIVE
    ========================================================= */
+
+@media (max-width: 960px) and (min-width: 769px) {
+  .header-inner {
+    gap: 12px;
+  }
+
+  .lang-link {
+    font-size: 1.0rem;
+    padding: 2px 3px;
+  }
+}
 
 @media (max-width: 900px) {
   .features-grid {
