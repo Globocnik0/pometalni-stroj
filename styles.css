@@ -1,10 +1,29 @@
 /* =========================================================
-   Elektrische Kehrmaschine — Purgar d.o.o.
+   Električni pometalni stroj — Purgar d.o.o.
    Shared stylesheet
    ========================================================= */
 
-/* --- Google Font import --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+/* --- Inter, self-hosted ---
+   Served from this site so no visitor data reaches Google on page load.
+   Variable font: one file covers every weight we use (400/600/700).
+   latin-ext carries the Slovenian č/š/ž and the German umlauts. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('fonts/inter-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('fonts/inter-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 /* --- CSS Variables --- */
 :root {
@@ -498,6 +517,47 @@ p:last-child { margin-bottom: 0; }
   border: none;
 }
 
+/* Click-to-load poster. Replaced by the real player on click, so no
+   request reaches YouTube for visitors who never watch. */
+.video-facade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: #000;
+  display: block;
+  cursor: pointer;
+}
+
+.video-facade img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.video-play-bg {
+  fill: #212121;
+  fill-opacity: 0.8;
+  transition: fill 0.2s ease, fill-opacity 0.2s ease;
+}
+
+.video-facade:hover .video-play-bg,
+.video-facade:focus-visible .video-play-bg {
+  fill: #f00;
+  fill-opacity: 1;
+}
+
 /* =========================================================
    CTA STRIP
    ========================================================= */
@@ -845,6 +905,7 @@ p:last-child { margin-bottom: 0; }
   box-shadow: var(--shadow);
 }
 
+
 /* =========================================================
    LANGUAGE SWITCHER
    ========================================================= */
@@ -854,6 +915,15 @@ p:last-child { margin-bottom: 0; }
   gap: 4px;
   align-items: center;
   flex-shrink: 0;
+}
+
+/* Self-hosted flag SVGs (from flag-icons, MIT) — same 4:3 box the
+   icon font used, so the switcher looks unchanged. */
+.flag {
+  display: block;
+  width: 1.333em;
+  height: 1em;
+  object-fit: cover;
 }
 
 .lang-link {

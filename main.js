@@ -63,3 +63,29 @@
       });
   });
 })();
+
+/* =========================================================
+   Click-to-load embeds
+   The YouTube player and the Google map are not requested at
+   all until the visitor clicks. That keeps third-party cookies
+   off the page for everyone who never opens them.
+   ========================================================= */
+(function () {
+  var video = document.querySelector('.video-facade');
+  if (video) {
+    video.addEventListener('click', function () {
+      var frame = document.createElement('iframe');
+      frame.src =
+        'https://www.youtube-nocookie.com/embed/' +
+        video.getAttribute('data-video') +
+        '?autoplay=1&rel=0';
+      frame.title = 'Električni pometalni stroj – video';
+      frame.allow =
+        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      frame.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      frame.allowFullscreen = true;
+      video.parentNode.replaceChild(frame, video);
+    });
+  }
+
+})();

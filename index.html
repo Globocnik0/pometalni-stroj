@@ -12,7 +12,6 @@
   <meta property="og:site_name" content="Električni pometalni stroj – Purgar d.o.o.">
   <link rel="icon" href="images/icons/favicon.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -156,13 +155,21 @@
         </div>
         <div class="video-wrap">
           <div class="video-ratio">
-            <iframe
-              src="https://www.youtube.com/embed/S5Aiat1jw14"
-              title="Električni pometalni stroj – video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
+            <!-- Nothing is requested from YouTube until the visitor clicks. -->
+            <button
+              type="button"
+              class="video-facade"
+              data-video="S5Aiat1jw14"
+              aria-label="Predvajaj video: Električni pometalni stroj"
+            >
+              <img src="images/video-poster.jpg" alt="" width="1280" height="720" loading="lazy">
+              <span class="video-play" aria-hidden="true">
+                <svg viewBox="0 0 68 48" width="68" height="48" focusable="false">
+                  <path class="video-play-bg" d="M66.52 7.74a8.57 8.57 0 0 0-6.03-6.06C55.08.24 34 .24 34 .24s-21.08 0-26.49 1.44a8.57 8.57 0 0 0-6.03 6.06C.05 13.17.05 24 .05 24s0 10.83 1.43 16.26a8.57 8.57 0 0 0 6.03 6.06C12.92 47.76 34 47.76 34 47.76s21.08 0 26.49-1.44a8.57 8.57 0 0 0 6.03-6.06C67.95 34.83 67.95 24 67.95 24s0-10.83-1.43-16.26z"/>
+                  <path d="M27.2 34.4 45.6 24 27.2 13.6z" fill="#fff"/>
+                </svg>
+              </span>
+            </button>
           </div>
         </div>
       </div>
@@ -200,8 +207,8 @@
         <a href="tel:+38641745685">041 745 685</a>
         <a href="mailto:info@pometalni-stroj.si">info@pometalni-stroj.si</a>
         <div class="lang-switcher">
-          <a href="https://elektrische-kehrmaschine.at/" class="lang-link" aria-label="Deutsch (Österreich)"><span class="fi fi-at"></span></a>
-          <a href="https://pometalni-stroj.si/" class="lang-link active" aria-label="Slovenščina"><span class="fi fi-si"></span></a>
+          <a href="https://elektrische-kehrmaschine.at/" class="lang-link" aria-label="Deutsch (Österreich)"><img class="flag" src="images/flag-at.svg" alt="" width="24" height="18"></a>
+          <a href="https://pometalni-stroj.si/" class="lang-link active" aria-label="Slovenščina"><img class="flag" src="images/flag-si.svg" alt="" width="24" height="18"></a>
         </div>
       </div>
     </div>
